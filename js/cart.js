@@ -410,7 +410,6 @@ console.log(productsInCart)
  * @returns Contrôle de validité du prénom
  */
 function firstNameCheck() {
-    window.onload=function(){
     const firstName = document.getElementById("firstName")
         if(/^[A-Za-z\-\ë]{3,20}$/.test(firstName.value)){
             document.getElementById("firstNameErrorMsg").innerHTML = ""//--Permet de retirer le message d'erreur
@@ -420,7 +419,6 @@ function firstNameCheck() {
         else {
             return false
                 }
-            }
             }
 
 
