@@ -10,11 +10,11 @@ console.log("L'id du produit est :", idProduct);
  * 
  * @returns Informations du panier : Quantité affichée à côté du mot panier dans le Header au moment de l'ouverture de la page
  */
- window.addEventListener("DOMContentLoaded", (event) => {
-    console.log("DOM entièrement chargé et analysé");
-
 
 const updateNumberProductInCart = () => {
+    
+    window.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM entièrement chargé et analysé");
 
 //--Récupération du panier
     let productsInCart = JSON.parse(localStorage.getItem("cart"))
@@ -47,8 +47,9 @@ const updateNumberProductInCart = () => {
             }
             displayUpdateCart()
         }
-}
 });
+
+}
 /**
  * 
  * @returns Appel des données liées au produits de la page actuelle
