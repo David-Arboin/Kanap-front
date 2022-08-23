@@ -6,7 +6,6 @@ let productsInCart = JSON.parse(localStorage.getItem("cart"))
  */
 function recoveryIdProduct () {
 
-    window.addEventListener("DOMContentLoaded", (event) => {
         console.log("DOM entièrement chargé et analysé");
 
     if (productsInCart == null) {
@@ -48,7 +47,6 @@ else {
     }
 )
 }
-});
 }
 recoveryIdProduct()
 

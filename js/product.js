@@ -22,7 +22,6 @@ const updateNumberProductInCart = () => {
 
 //--S'il est vide, on l'affiche
     if (productsInCart == null){
-        window.addEventListener("DOMContentLoaded", (event) => {
         let displayUpdateCart = () => {
             let sectionCart = document.getElementsByTagName("ul")[1];
             let updateInfoCart = document.createElement("p");
@@ -33,26 +32,21 @@ const updateNumberProductInCart = () => {
 
             }
             displayUpdateCart()
-        })
     }
 //--S'il contient des produits, on compte leur nombre
     else {
             for (i = 0; i < productsInCart.length; i++) {
             if (productsInCart[i].color != "" && productsInCart[i].quantity > 0) {
-            window.addEventListener("DOMContentLoaded", () => {
                 numberProductInCart = parseInt(numberProductInCart) + parseInt(productsInCart[i].quantity)
-            })
             }
         }
 //--Et on l'affiche à côté du mot panier
         let displayUpdateCart = () => {
-            window.addEventListener("DOMContentLoaded", () => {
 
             let sectionCart = document.getElementsByTagName("ul")[1];
             let updateInfoCart = document.createElement("p");
             sectionCart.appendChild(updateInfoCart);
             updateInfoCart.innerHTML = `: ${numberProductInCart} canapé(s)`;
-            })
             }
             displayUpdateCart()
         }
@@ -138,7 +132,6 @@ function addToCart() {//addToCart
  * @returns Si la couleur ou la quantité n'est pas choisie, le client est avertit
  */
     function alertsColor () {
-        window.addEventListener("DOMContentLoaded", (event) => {
         if (newProduct.color === ""){
             const colorMessageSvp = document.getElementById("colors")
             colorMessageSvp.style.backgroundColor = "red"
@@ -156,7 +149,6 @@ function addToCart() {//addToCart
             colorMessageSvp.removeAttribute("style")
             displayAlertColor.removeChild(alertColor)
         }
-    })
     }
 
 /**
@@ -164,7 +156,6 @@ function addToCart() {//addToCart
  * @returns Prévenir l'utilisateur pour saisie d'une quantité non comprise entre 1 et 100
  */
     function alertsQuantity () {
-        window.addEventListener("DOMContentLoaded", () => {
         if (newProduct.quantity === 0 || newProduct.quantity > 100 || newProduct.quantity < 0){
             const colorErrorQuantity = document.getElementById("quantity")
             colorErrorQuantity.style.backgroundColor = "red"
@@ -181,7 +172,6 @@ function addToCart() {//addToCart
             colorErrorQuantity.removeAttribute("style")
             displayAlertQuantity.removeChild(alertQuantity)
         }
-    })
     }
     alertsColor()
     alertsQuantity()
@@ -196,7 +186,6 @@ function addToCart() {//addToCart
         localStorage.setItem("cart", JSON.stringify(productsInCart))
 
 //--Affichage pendant deux seconde de l'information 'Effecué !' après mise à jour du panier
-window.addEventListener("DOMContentLoaded", (event) => {
         document.getElementById("colors").removeAttribute("style")
         document.getElementById("colors").value = ""
         document.getElementById("quantity").value = 1
@@ -204,7 +193,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         let confirmInfoCard = document.getElementById("addToCart")
         confirmInfoCard.appendChild(infoCard).innerText = "Effectué !"
         setTimeout(function() {confirmInfoCard.removeChild(infoCard)},1000)
-})
     }
 
 //--Si le panier contient un produit identique (même id et même couleur)
@@ -216,7 +204,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
             console.log("Ce canapé est déjà dans le panier, sa quantité vient d'être mise à jour")
 
             productsInCart.map(product => {
-                window.addEventListener("DOMContentLoaded", (event) => {
                 if (product._id === newProduct._id && product.color === newProduct.color) {
                     if ((parseInt(newProduct.quantity) + parseInt(product.quantity)) > 100){
                         
@@ -254,14 +241,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
                     }             
                     return product
                 }
-            })
             }
         )
     }
 //--Si le produit est nouveau, on l'ajoute
         else {
             if (newProduct.color != "" && newProduct.quantity != 0 && newProduct.quantity > 0 && newProduct.quantity < 101){
-                window.addEventListener("DOMContentLoaded", (event) => {
                 productsInCart = [...productsInCart, newProduct]
                 localStorage.setItem("cart", JSON.stringify(productsInCart))
         
@@ -273,7 +258,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 let confirmInfoCard = document.getElementById("addToCart")
                 confirmInfoCard.appendChild(infoCard).innerText = "Effectué !"
                 setTimeout(function() {confirmInfoCard.removeChild(infoCard)},1000)
-                })
             }
     }
     
@@ -282,7 +266,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
  * @returns Mise à jour des informations du panier : Quantité affichée à côté du mot panier dans le Header
  */
     const updateNumberProductInCartAfterClick = () => {
-        window.addEventListener("DOMContentLoaded", (event) => {
         let productsInCart = JSON.parse(localStorage.getItem("cart"))
         let numberProductInCart = 0
         
@@ -308,7 +291,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
             console.log("Maintenant, le panier contient :" ,numberProductInCart, "canapés")
             }
             displayUpdateCart()
-        })
         }
         updateNumberProductInCartAfterClick()
 }
