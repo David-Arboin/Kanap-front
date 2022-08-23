@@ -24,7 +24,7 @@ const updateNumberProductInCart = () => {
     if (productsInCart == null){
         let displayUpdateCart = () => {
             let sectionCart = document.getElementsByTagName("ul")[1];
-            let updateInfoCart = document.createElement("p").style.color="black";
+            let updateInfoCart = document.createElement("p");
             updateInfoCart.style.color="black";
 
 
