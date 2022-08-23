@@ -22,16 +22,18 @@ const updateNumberProductInCart = () => {
 
 //--S'il est vide, on l'affiche
     if (productsInCart == null){
+        window.addEventListener("DOMContentLoaded", (event) => {
         let displayUpdateCart = () => {
             let sectionCart = document.getElementsByTagName("ul")[1];
             let updateInfoCart = document.createElement("p");
 
-            window.onload=function(){
+
                 sectionCart.appendChild(updateInfoCart);
                 updateInfoCart.innerText = ": vide";
-            }
+
             }
             displayUpdateCart()
+        })
     }
 //--S'il contient des produits, on compte leur nombre
     else {
