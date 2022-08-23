@@ -10,15 +10,6 @@ const fetchProducts = async () => {
     return productsAvailable
 }
 
-//  Méthode 2
-/*     const fetchProducts = () => {
-        return fetch("http://localhost:3000/api/products")//  Requête fetch GET pour récupérer les données de l'api
-        .then(res => {//  Réponse de l'api, contient le status ainsi que d'autre informations. Les données ne sont pas lisibles à ce stade
-        return res.json()// On parse le body afin qu'il soit lisible par notre code
-        }
-     )
-} */
-
 /**
  * Implémentation des données dans la page
  */

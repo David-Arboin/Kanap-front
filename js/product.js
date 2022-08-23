@@ -91,9 +91,6 @@ const displayPageProduct = async () => {
     }
 }
 
-//--Initialisation de la quantité à 1 sur le bouton 'Nombre d'article(s) (1-100)' au moment de l'ouverture de la page sinon 0 est par défaut
-document.getElementById("quantity").value = 1
-
 //--Déclaration des constantes d'alertes si aucune couleur et/ou quantité n'a été saisie
 let alertColor = document.createElement("p")
 let displayAlertColor = document.getElementsByClassName("item__content__settings__color")[0]
