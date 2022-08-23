@@ -10,6 +10,10 @@ console.log("L'id du produit est :", idProduct);
  * 
  * @returns Informations du panier : Quantité affichée à côté du mot panier dans le Header au moment de l'ouverture de la page
  */
+ window.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM entièrement chargé et analysé");
+
+
 const updateNumberProductInCart = () => {
 
 //--Récupération du panier
@@ -44,7 +48,7 @@ const updateNumberProductInCart = () => {
             displayUpdateCart()
         }
 }
-
+});
 /**
  * 
  * @returns Appel des données liées au produits de la page actuelle
@@ -106,6 +110,10 @@ window.onload=function(){
  * 
  * @returns Déclaration de la fonction de remplissage du panier
  */
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM entièrement chargé et analysé");
+
 function addToCart() {//addToCart
 
 //--Récupération des données de la page produit pour les envoyers dans le panier s'il n'y est pas déjà
@@ -287,5 +295,7 @@ function addToCart() {//addToCart
         }
         updateNumberProductInCartAfterClick()
 }
+});
+
 updateNumberProductInCart()
 displayPageProduct()
