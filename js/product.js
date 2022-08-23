@@ -26,10 +26,10 @@ const updateNumberProductInCart = () => {
             let sectionCart = document.getElementsByTagName("ul")[1];
             let updateInfoCart = document.createElement("p");
 
-            window.addEventListener("DOMContentLoaded", () => {
+            window.onload=function(){
                 sectionCart.appendChild(updateInfoCart);
                 updateInfoCart.innerText = ": vide";
-            })
+            }
             }
             displayUpdateCart()
     }
