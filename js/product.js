@@ -25,6 +25,7 @@ const updateNumberProductInCart = () => {
         let displayUpdateCart = () => {
             let sectionCart = document.getElementsByTagName("ul")[1];
             let updateInfoCart = document.createElement("p").style.color="black";
+            updateInfoCart.style.color="black";
 
 
                 sectionCart.appendChild(updateInfoCart);
