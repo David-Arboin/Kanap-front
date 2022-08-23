@@ -4,7 +4,7 @@
  */
 // Méthode 1
 const fetchProducts = async () => {
-    const res = await fetch("http://localhost:3000/api/products")
+    const res = await fetch("https://site-de-vente-de-canape-back.herokuapp.com/api/products/")
     const productsAvailable = await res.json()
     console.log("Liste des produits disponibles :", productsAvailable)
     return productsAvailable
