@@ -51,7 +51,7 @@ const updateNumberProductInCart = () => {
  */
 //--Méthode 1
   const fetchProduct = async () => {
-    const res = await fetch(`http://localhost:3000/api/products/${idProduct}`)
+    const res = await fetch(`https://site-de-vente-de-canape-back.herokuapp.com/api/products/${idProduct}`)
     const dataProduct = await res.json()
     console.log("Données liées au produit de cette page :", dataProduct)
     return dataProduct
@@ -59,7 +59,7 @@ const updateNumberProductInCart = () => {
 
 //--Méthode 2
 /*    const fetchProduct = () => {
-        return fetch(`http://localhost:3000/api/products/${idProduct}`)//  Requête fetch GET pour récupérer les données d'un canapé dans l'api selon son id
+        return fetch(`https://site-de-vente-de-canape-back.herokuapp.com/api/products/${idProduct}`)//  Requête fetch GET pour récupérer les données d'un canapé dans l'api selon son id
         .then(res => {//  Réponse de l'api, contient le status ainsi que d'autre informations. Les données ne sont pas lisibles à ce stade
         return res.json()// On parse le body afin qu'il soit lisible par notre code
         }

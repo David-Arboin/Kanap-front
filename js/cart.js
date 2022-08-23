@@ -16,7 +16,7 @@ if (productsInCart == null) {
 }
 else {
     const fetchProduct = productsInCart.map(product => {
-        return fetch(`http://localhost:3000/api/products/${product._id}`)
+        return fetch(`https://site-de-vente-de-canape-back.herokuapp.com/api/products/${product._id}`)
     })
 
     let productsInCartWithPrice = Promise.all(fetchProduct)
@@ -541,7 +541,7 @@ const formValidateAndCheck = async (panierDisplay) => {
             console.log("Fiche du contact :", contact)
 
 //--Envoi de la commande sur le server
-            const sendOrderToServer01 = fetch("http://localhost:3000/api/products/order", {
+            const sendOrderToServer01 = fetch("https://site-de-vente-de-canape-back.herokuapp.com/api/products/order", {
                 method: "POST",
                 headers: {
                     "Content-Type" : "application/json"
