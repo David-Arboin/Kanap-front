@@ -98,7 +98,9 @@ let alertQuantity = document.createElement("p")
 let displayAlertQuantity = document.getElementsByClassName("item__content__settings__quantity")[0]
 
 //*****************Ecoute du click sur Ajouter au panier
-document.getElementById("addToCart").addEventListener("click", addToCart)
+window.onload=function(){
+    document.getElementById("addToCart").addEventListener("click", addToCart)
+  }
 
 /**
  * 
