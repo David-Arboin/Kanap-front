@@ -5,7 +5,12 @@ let productsInCart = JSON.parse(localStorage.getItem("cart"))
  * @returns Récupération des prix associés aux ids de produits
  */
 function recoveryIdProduct () {
-if (productsInCart == null) {
+
+    window.addEventListener("DOMContentLoaded", (event) => {
+        console.log("DOM entièrement chargé et analysé");
+
+    if (productsInCart == null) {
+
     let displayPrice = document.getElementById("totalPrice")
     displayPrice.innerText = `0`
     console.log("Prix total au moment de l'ouverture de la page : 0 €")
@@ -43,6 +48,7 @@ else {
     }
 )
 }
+});
 }
 recoveryIdProduct()
 
